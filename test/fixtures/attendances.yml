@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee: one
+  customer: one
+  date: 2016-08-24 17:06:56
+  duration: 1
+
+two:
+  employee: two
+  customer: two
+  date: 2016-08-24 17:06:56
+  duration: 1

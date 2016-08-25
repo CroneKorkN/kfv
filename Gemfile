@@ -48,5 +48,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # ckn
-gem "mysql2"
+#gem "mysql2"
 gem "slim-rails"

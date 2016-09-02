@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
-  #skip_before_filter :require_login, only: [:new]
+  skip_before_filter :require_login, only: [:new]
 
   # GET /employees
   # GET /employees.json

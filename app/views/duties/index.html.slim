@@ -1,0 +1,27 @@
+h1 Listing duties
+
+table
+  thead
+    tr
+      th Employee
+      th Customer
+      th Date
+      th Duration
+      th
+      th
+      th
+
+  tbody
+    - @duties.each do |duty|
+      tr
+        td = duty.employee
+        td = duty.customer
+        td = duty.date
+        td = duty.duration
+        td = link_to 'Show', duty
+        td = link_to 'Edit', edit_duty_path(duty)
+        td = link_to 'Destroy', duty, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Duty', new_duty_path

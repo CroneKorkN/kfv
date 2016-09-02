@@ -14,6 +14,7 @@ html
       #page-content
         = yield
     .footer
+      hr
       - if current_user
         li
           = link_to "log out", logout_path

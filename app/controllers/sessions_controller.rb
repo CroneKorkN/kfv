@@ -1,14 +1,14 @@
 class SessionsController < ApplicationController
-  #skip_before_filter :require_login, only: [:new]
+  skip_before_filter :require_login
 
   def new
 
   end
 
   def create
-    user = Employee.find_by(mail: params[:mail]) #|| User.find_by(name: params[:name])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
+    employee = Employee.find_by(name: params[:name])
+    if employee && employee.authenticate(params[:password])
+      session[:employee_id] = employee.id
       redirect_to root_url, notice: 'Logged in!'
     else
       redirect_to root_url
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    session[:employee_id] = nil
     redirect_to root_url, notice: 'Logged out!'
   end
 end

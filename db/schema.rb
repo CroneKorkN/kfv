@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824150656) do
+ActiveRecord::Schema.define(version: 20160902091646) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer  "employee_id"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20160824150656) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.boolean  "manager"
+    t.index ["manager"], name: "index_employees_on_manager"
     t.index ["name"], name: "index_employees_on_name"
   end
 

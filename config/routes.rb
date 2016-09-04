@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-  resources :duties
   resources :customers
-  resources :attendances # as employee
+  resources :duties do # as employee
+    get 'approve', to: 'duties#approve', as: 'approve'
+  end
   resources :employees do
-    resources :attendances # as admin
+    resources :duties # as admin
   end
   resources :sessions, only: [:new, :create, :destroy]
   get 'signup', to: 'employees#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
-  root to: "attendances#index"
+  root to: "duties#approve"
 end

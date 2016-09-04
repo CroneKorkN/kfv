@@ -10,25 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902091646) do
-
-  create_table "attendances", force: :cascade do |t|
-    t.integer  "employee_id"
-    t.integer  "customer_id"
-    t.datetime "date"
-    t.integer  "duration"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["customer_id"], name: "index_attendances_on_customer_id"
-    t.index ["date"], name: "index_attendances_on_date"
-    t.index ["employee_id"], name: "index_attendances_on_employee_id"
-  end
+ActiveRecord::Schema.define(version: 20160902094306) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_customers_on_name"
+  end
+
+  create_table "duties", force: :cascade do |t|
+    t.integer  "employee_id"
+    t.integer  "customer_id"
+    t.datetime "date"
+    t.integer  "duration"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["customer_id"], name: "index_duties_on_customer_id"
+    t.index ["date"], name: "index_duties_on_date"
+    t.index ["employee_id"], name: "index_duties_on_employee_id"
   end
 
   create_table "employees", force: :cascade do |t|

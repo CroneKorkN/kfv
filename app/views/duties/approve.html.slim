@@ -1,0 +1,15 @@
+h2 approve
+
+.title
+  = "#{@duty.date.strftime("%d.%m.%Y %H:%M")} @ #{@duty.customer.name}"
+
+- if @duty.employees_previous
+  = link_to "/duties/#{@duty.employees_previous.id}/approve" do
+    button previous
+
+- if @duty.employees_next
+  = link_to "/duties/#{@duty.employees_next.id}/approve" do
+    button next
+
+.minutes
+  = editable @duty, :duration

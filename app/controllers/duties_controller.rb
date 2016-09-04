@@ -1,6 +1,14 @@
 class DutiesController < ApplicationController
   before_action :set_duty, only: [:show, :edit, :update, :destroy]
 
+  def approve
+    if params[:duty_id]
+      @duty = Duty.find(params[:duty_id])
+    elsif current_user
+      redirect_to duty_approve_path(current_user.current_duty)
+    end
+  end
+
   # GET /duties
   # GET /duties.json
   def index

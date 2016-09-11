@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 20160902094306) do
     t.integer  "employee_id"
     t.integer  "customer_id"
     t.datetime "date"
-    t.integer  "duration"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "duration",    default: 0, null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.index ["customer_id"], name: "index_duties_on_customer_id"
     t.index ["date"], name: "index_duties_on_date"
     t.index ["employee_id"], name: "index_duties_on_employee_id"

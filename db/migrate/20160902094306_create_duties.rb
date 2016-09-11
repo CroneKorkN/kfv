@@ -4,7 +4,7 @@ class CreateDuties < ActiveRecord::Migration[5.0]
       t.references :employee, foreign_key: true
       t.references :customer, foreign_key: true
       t.datetime :date
-      t.integer :duration
+      t.integer :duration, default: 0, null: false
 
       t.timestamps
     end

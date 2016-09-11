@@ -1,7 +1,7 @@
 h2 Einloggen
 = form_tag sessions_path do
   .field
-    = text_field_tag :name, nil, placeholder: "Name"
+    = collection_select :employee_id, nil, Employee.all, :id, :name
   .field
     = text_field_tag :password, nil, placeholder: "Password"
   .actions

@@ -1,7 +1,7 @@
 manager = Employee.create name: "ckn", password: "asd", manager: true
-employee_1 = Employee.create name: "Mina Mumpitz", password: "aaa"
-Employee.create name: "Nora Nunmal", password: "aaa"
-Employee.create name: "Olaf Ofenrohr", password: "aaa"
+employee_1 = Employee.create name: "Mina Mumpitz", password: "asd"
+Employee.create name: "Nora Nunmal", password: "asd"
+Employee.create name: "Olaf Ofenrohr", password: "asd"
 Customer.create name: "Annelise Anfang"
 Customer.create name: "Berta Bonze"
 Customer.create name: "Crista Carlo"

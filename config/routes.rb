@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  patch "/editable", to: "editables#update"
+
   resources :customers
   resources :duties do # as employee
     get 'approve', to: 'duties#approve', as: 'approve'

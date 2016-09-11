@@ -1,15 +1,16 @@
-h2 approve
+h2 = "#{current_user.name} approves"
 
 .title
   = "#{@duty.date.strftime("%d.%m.%Y %H:%M")} @ #{@duty.customer.name}"
 
-- if @duty.employees_previous
-  = link_to "/duties/#{@duty.employees_previous.id}/approve" do
-    button previous
+.duration
+  = editable @duty, :duration, trigger: :auto
 
-- if @duty.employees_next
-  = link_to "/duties/#{@duty.employees_next.id}/approve" do
-    button next
+.navigation
+  - if @duty.employees_previous
+    = link_to "/duties/#{@duty.employees_previous.id}/approve" do
+      button previous
 
-.minutes
-  = editable @duty, :duration
+  - if @duty.employees_next
+    = link_to "/duties/#{@duty.employees_next.id}/approve" do
+      button next

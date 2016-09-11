@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require_tree ./modules
+
+function l(t) {
+  console.log(t);
+}
+
+$(document).ready(function(){
+  $("html").initialize();
+});

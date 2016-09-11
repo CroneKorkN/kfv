@@ -6,13 +6,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    employee = Employee.find_by(name: params[:name])
+    puts params[:employee_id]
+    employee = Employee.find(params[:employee_id][0]) # why [0]?
     if employee && employee.authenticate(params[:password])
       session[:employee_id] = employee.id
-      redirect_to root_url, notice: 'Logged in!'
-    else
-      redirect_to root_url
+      if employee.manager
+        redirect_to 'employees#backend'
+      else
+        redirect_to 'duties#approve'
+      end
     end
+  else
+    redirect_to root_url
   end
 
   def destroy
